@@ -15,19 +15,23 @@
   <section id="expense_amount">
     <h3>Expense</h3>
     <h4 id="expense_total">$0</h4>
+
     <div  class="expense_stuff"><p id="expense_added"></p><p id="expense_added2"></p></div>
+    <label for="expense1"></label><input type="button" id="expense1" value="Add Expense">
   </section>
   <section id="income_amount">
     <h3>Income</h3>
     <h4 id="income_total">$0</h4>
     <div  class="income_stuff"><p id="income_added"></p><p id="income_added2"></p></div>
+    <label for="income1"></label><input type="button" id="income1" value="Add Income">
   </section>
   </div>
 
 <div id="bottom">
 
 
-   <section id="add_expense">
+   <div id="add_expense">
+     <div class="adding_expense">
       <form>
         <h4>Adding Expense</h4>
         <div class="category_selection1">
@@ -57,10 +61,12 @@
           <br/><br/><label for="button1"></label><input type="button" id="button1" value="Add Expense">
       </div>
     </form>
-  </section>
+  </div>
+  </div>
 
 
-  <section id="add_income">
+  <div id="add_income">
+    <div class ="adding_income">
      <form>
        <h4>Adding Income</h4>
        <div class="category_selection2">
@@ -79,7 +85,8 @@
          <br/><br/><label for="button2"></label><input type="button" id="button2" value="Add Income">
      </div>
    </form>
-  </section>
+ </div>
+ </div>
 </div>
   <script src="website.js"></script>
  </body>

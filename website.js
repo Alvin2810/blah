@@ -1,9 +1,23 @@
+function open_Expense(){
+  var expense1 = document.getElementById('expense1');
+  expense1.addEventListener('click', showDiv, false);
+}
+function showDiv() {
+   document.getElementById('add_expense').style.display = "block";
+}
+function close_Expense(){
+  var button1 = document.getElementById('button1');
+  button1.addEventListener('click', hideDiv, false);
+}
+function hideDiv() {
+   document.getElementById('add_expense').style.display = "none";
+}
+
 function add_Expense(){
   var button1 = document.getElementById('button1');
   button1.addEventListener('click', addRecord, false);
 
 }
-
 
 
 category1 = [];
@@ -30,6 +44,23 @@ function addRecord() {
   return Number(total) + Number(expense);
 }
 }
+
+function open_Income(){
+  var income1 = document.getElementById('income1');
+  income1.addEventListener('click', showDiv1, false);
+}
+function showDiv1() {
+   document.getElementById('add_income').style.display = "block";
+}
+function close_Income(){
+  var button2 = document.getElementById('button2');
+  button2.addEventListener('click', hideDiv1, false);
+}
+function hideDiv1() {
+   document.getElementById('add_income').style.display = "none";
+}
+
+
 function add_Income(){
   var button2 = document.getElementById('button2');
   button2.addEventListener('click', addIncome, false);
@@ -61,8 +92,9 @@ function addIncome() {
   return Number(total) + Number(income);
     }
 }
-
-
-
+window.addEventListener('load', close_Income, false)
+window.addEventListener('load', open_Income, false)
+window.addEventListener('load', close_Expense, false)
+window.addEventListener('load', open_Expense, false)
 window.addEventListener('load', add_Expense, false)
 window.addEventListener('load', add_Income, false)
