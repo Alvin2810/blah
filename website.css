@@ -8,12 +8,11 @@ h1,h2,h3,h4,p{
 }
 .expense_stuff, .income_stuff{
   display:grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
 }
 #top{
   display:grid;
   grid-template-columns: auto auto;
-  padding:5px;
 }
 #expense_amount,#income_amount{
   border: 3px solid black;
@@ -22,12 +21,6 @@ h1,h2,h3,h4,p{
   text-align: center;
 }
 
-#bottom{
-  display:grid;
-  grid-template-columns: auto auto;
-  padding:5px;
-
-}
 
 #add_expense,#add_income{
   display:none;
@@ -40,6 +33,7 @@ h1,h2,h3,h4,p{
   background-color: rgba(0,0,0,0.5);
 }
 .adding_expense,.adding_income{
+  text-align: center;
   padding: 5px;
   position: relative;
   top: 30%;
@@ -47,7 +41,7 @@ h1,h2,h3,h4,p{
   width:75%;
   background-color: white;
 }
-.category_selection1,.category_selection2,.input1, .input2{
+.category_selection1,.category_selection2,.input1, .input2, #expense_date{
   text-align: center;
   padding: 5px;
 }
