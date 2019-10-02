@@ -103,6 +103,7 @@ let massPopChart = new Chart(myChart, {
     title:{
       display:true,
       text:'Expense',
+      fontColor:"Black",
       fontSize:18,
       responsive:true
     },
