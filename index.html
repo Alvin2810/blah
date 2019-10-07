@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="website.css" rel="stylesheet">
+  <link href="small_website.css" media="screen and (max-width: 600px)" rel="stylesheet">
+  <link href="big_website.css" media="screen and (min-width: 600px)" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
@@ -9,9 +10,9 @@
   </title>
 </head>
 <body>
-<h1>Expense Tracking App</h1>
-<h2 id="total">Balance: $0</h2>
-<div id="top">
+  <h1>Expense Tracking App</h1>
+  <h2 id="total">Balance: $0</h2>
+
   <div class="title">
     <h4 id="expense_total">Expense - $0</h4>
     <h4 id="income_total">Income - $0</h4>
@@ -25,26 +26,28 @@
     <label for="summary"></label><input type="button" id="summary" value="Summary">
   </div>
 
-  <div id="bloo">
+  <div id="transaction_summary">
+    <h2 class="sum">Summary</h2>
     <div class="amount">
       <section id="expense_amount">
         <h3>Expense</h3>
         <h4 id="expense_total1">$0</h4>
 
-        <div  class="expense_stuff"><p id="expense_added"></p><p id="expense_added2"></p></div>
+        <div  class="expense_summary"><p id="expense_added"></p><p id="expense_added2"></p></div>
       </section>
 
       <section id="income_amount">
         <h3>Income</h3>
         <h4 id="income_total1">$0</h4>
-        <div  class="income_stuff"><p id="income_added"></p><p id="income_added2"></p></div>
+        <div  class="income_summary"><p id="income_added"></p><p id="income_added2"></p></div>
       </section>
     </div>
+    <div class="back">
     <label for="back"></label><input type="button" id="back" value="Go Back">
   </div>
-</div>
+  </div>
 
-<div id="bottom">
+
 
 
    <div id="add_expense">
@@ -73,6 +76,7 @@
       <div class="input1">
           <label for="expense">Amount: $ </label><input size="15" type="text" id="expense">
           <br/><br/><label for="button1"></label><input type="button" id="button1" value="Add Expense">
+          <label for="cancel1"></label><input type="button" id="cancel1" value="Cancel">
       </div>
     </form>
   </div>
@@ -97,12 +101,13 @@
      <div class="input2">
          <label for="income">Amount: $ </label><input size="15" type="text" id="income">
          <br/><br/><label for="button2"></label><input type="button" id="button2" value="Add Income">
+         <label for="cancel2"></label><input type="button" id="cancel2" value="Cancel">
      </div>
    </form>
  </div>
  </div>
-</div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   <script src="expense_first.js"></script>
   <script src="expense_second.js"></script>
   <script src="income_first.js"></script>

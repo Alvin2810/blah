@@ -1,21 +1,22 @@
+//Adding event listener to the Add Expense button//
 function add_Expense(){
   var button1 = document.getElementById('button1');
   button1.addEventListener('click', addRecord, false);
 
 }
-
+//function to display expense added, total expense and get the data for the chart//
 window.sum=[];
 window.category1 = [];
 window.expense = []
 function addRecord() {
-window.inp = document.getElementById('category1');
-window.blah = document.getElementById('expense');
+window.category_input = document.getElementById('category1');
+window.expense_input = document.getElementById('expense');
 
-  window.expense.push(window.blah.value);
-  window.category1.push(inp.value);
-  window.sum.push({name: window.inp.value, value:Number(window.blah.value)});
-  window.inp.value = "";
-  window.blah.value="";
+  window.expense.push(window.expense_input.value);
+  window.category1.push(category_input.value);
+  window.sum.push({name: window.category_input.value, value:Number(window.expense_input.value)});
+  window.category_input.value = "";
+  window.expense_input.value="";
   window.total_expense = Number(expense.reduce(myFunc))
   document.getElementById("expense_added").innerHTML = window.category1.join ("<br/> ");
   document.getElementById("expense_added2").innerHTML = "$" +window.expense.join("<br/> $");
@@ -25,8 +26,8 @@ window.blah = document.getElementById('expense');
     document.getElementById("total").innerHTML = "Balance: $ -" +  window.total_expense;
   }
   else{
-    var blah = Number(window.total_income) - Number(window.total_expense)
-    document.getElementById("total").innerHTML ="Balance: $" + blah;
+    var expense_input = Number(window.total_income) - Number(window.total_expense)
+    document.getElementById("total").innerHTML ="Balance: $" + expense_input;
   }
   function myFunc(total, expense) {
   return Number(total) + Number(expense);
@@ -34,11 +35,11 @@ window.blah = document.getElementById('expense');
 
 var holder = {};
 
-sum.forEach(function(d) {
-  if (holder.hasOwnProperty(d.name)) {
-    holder[d.name] = holder[d.name] + Number(d.value);
+sum.forEach(function(data) {
+  if (holder.hasOwnProperty(data.name)) {
+    holder[data.name] = holder[data.name] + Number(data.value);
   } else {
-    holder[d.name] = d.value;
+    holder[data.name] = data.value;
   }
 });
 
@@ -58,10 +59,7 @@ for (var property in holder) {
 
 }
 
-
-
-console.log(data1)
-console.log(data2)
+//Adding chart to the app//
 let myChart = document.getElementById('piechart').getContext('2d');
 
 // Global Options
@@ -70,13 +68,12 @@ Chart.defaults.global.defaultFontSize = 18;
 Chart.defaults.global.defaultFontColor = '#777';
 
 let massPopChart = new Chart(myChart, {
-  type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  type:'pie',
   data:{
     labels:data1,
     datasets:[{
       label:'Population',
       data:data2,
-      //backgroundColor:'green',
       backgroundColor:[
         "orange",
         "white",
@@ -111,8 +108,10 @@ let massPopChart = new Chart(myChart, {
       display:true,
       position:'bottom',
       labels:{
+        usePointStyle: true,
         fontColor:'#000',
-        fontSize: 14,
+        fontSize: 13,
+        boxWidth: 7,
       }
     },
     layout:{
