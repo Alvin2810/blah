@@ -11,7 +11,6 @@ h1,h2,h3,h4,p{
   grid-template-columns: auto auto;
 }
 .title{
-  margin-top:25px;
   text-align: center;
   display:grid;
   grid-template-columns: auto auto;
@@ -20,7 +19,7 @@ h1,h2,h3,h4,p{
   margin-top: 70px;
 }
 canvas{
-  width:230px;
+  width:235px;
   height:180px;
 }
 
